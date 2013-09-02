@@ -1,0 +1,34 @@
+# Increase volume
+"amixer sset Master playback 10+ unmute"
+    XF86AudioRaiseVolume
+
+# Decrease volume
+"amixer sset Master playback 10- unmute"
+    XF86AudioLowerVolume
+
+# Toggle mute
+"amixer sset Master toggle"
+    XF86AudioMute
+
+# Toggle touchpad
+"synclient TouchpadOff=$(synclient -l | grep -c 'TouchpadOff.*=.*0')"
+    XF86WebCam
+
+# Lock
+"slimlock"
+    XF86ScreenSaver
+
+"slimlock"
+    Control+Mod2 + F3
+
+# Play/Pause
+"mpc toggle"
+    XF86AudioPlay
+
+# Next Song
+"mpc next"
+    XF86AudioNext
+
+# Previous Soung
+"mpc prev"
+    XF86AudioPrev

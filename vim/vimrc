@@ -1,0 +1,76 @@
+" lrnt's vim configuration file
+
+" {{{ Basics
+execute pathogen#infect()
+
+set nocompatible
+set modelines=0
+set list
+set listchars=tab:▸\ ,eol:¬
+set relativenumber
+set ruler
+set cursorline
+
+filetype plugin on
+
+" Save on focus lost
+au FocusLost * silent! wa
+
+" Sudo to write
+cnoremap w!! w !sudo tee % >/dev/null
+" }}}
+
+" {{{ Filetypes
+au BufRead,BufNewFile *.pde set filetype=arduino
+au BufRead,BufNewFile *.ino set filetype=arduino
+" }}}
+
+" {{{ Tabs and wrapping
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set smartindent
+set autoindent
+set wrap
+set formatoptions=n1
+set textwidth=80
+set colorcolumn=+1
+" }}}
+
+" {{{ Looks
+syntax on
+colorscheme zenburn
+set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)
+set foldmethod=marker
+
+if has('gui_running')
+    set guifont=Terminus\ 10
+
+    " Less UI stuff
+    set go-=T
+    set go-=l
+    set go-=L
+    set go-=r
+    set go-=R
+
+    " Beautiful vertical lines
+    set fillchars=vert:│
+endif
+" }}}
+
+" {{{ Navigation
+" Navigation between split windows
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nnoremap <c-r> <c-w>r
+" }}}
+
+" {{{ Backup files
+set undodir=~/.vim/tmp/undo//
+set backupdir=~/.vim/tmp/backup//
+set directory=~/.vim/tmp/swap//
+set backup
+" }}}

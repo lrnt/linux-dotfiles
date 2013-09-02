@@ -1,0 +1,38 @@
+# lrnt's zsh configuration file
+
+# {{{ Environment
+export HISTFILE="${HOME}/.zsh_history"
+export HISTSIZE=10000
+export SAVEHIST=10000
+export VISUAL="gvim -f"
+export EDITOR="${visual}"
+export BROWSER="/usr/bin/firefox"
+export XTERM="urxvt"
+export PATH=$PATH:$HOME/bin:/opt/android-sdk/tools
+export DOTFILES="$HOME/dotfiles"
+# }}}
+
+# {{{ Options
+autoload -U colors && colors
+autoload -U compinit && compinit
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+
+setopt prompt_subst
+
+# Smart urls
+autoload -U url-quote-magic
+zle -N self-insert url-quote-magic
+# }}}
+
+# {{{ Keybindings
+bindkey '^[[1;5D' vi-backward-blank-word
+bindkey '^[[1;5C' vi-forward-blank-word
+bindkey '^i' expand-or-complete-prefix
+bindkey '^W' backward-kill-word
+# }}}
+
+# {{{ Load snippets
+for snippets ($DOTFILES/zsh/*.zsh(N))
+    source $snippets
+# }}}

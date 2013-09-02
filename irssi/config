@@ -1,0 +1,60 @@
+settings = {
+  core = { real_name = "lrnt"; user_name = "lrnt"; nick = "lrnt"; };
+  "fe-text" = { actlist_sort = "refnum"; };
+  "fe-common/core" = {
+    completion_char = ",";
+    completion_nicks_lowercase = "yes";
+    autocreate_query_level = "MSGS DCCMSGS";
+    autofocus_new_items = "yes";
+    autolog = "yes";
+    autolog_level = "all -crap -clientcrap -ctcps";
+    theme = "awesome";
+    bell_beeps = "yes";
+    beep_msg_level = "MSGS NOTICES DCC DCCMSGS HILIGHT";
+  };
+  "perl/core/scripts" = {
+    awl_block = "15";
+    awl_display_key = "$Q%K|$N%n $H$C$S";
+    awl_display_nokey = "[$N]$H$C$S";
+  };
+};
+
+statusbar = {
+  default = {
+    window = { disabled = "yes"; };
+    awl_0 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_0 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+  };
+};
+
+hilights = ( { text = "lrnt"; nick = "yes"; word = "yes"; } );
+
+servers = (
+  {
+    address = "irc.freenode.net";
+    chatnet = "freenode";
+    autoconnect = "yes";
+    port = "7000";
+    use_ssl = "yes";
+  },
+  {
+    address = "irc.oftc.net";
+    chatnet = "oftc";
+    autoconnect = "yes";
+    port = "9999";
+    use_ssl = "yes";
+  }
+);
+
+channels = (
+  { name = "#archlinux"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#awesome"; chatnet = "oftc"; autojoin = "yes"; }
+);
+
+chatnets = { freenode = { type = "IRC"; }; oftc = { type = "IRC"; }; };
+logs = { };
