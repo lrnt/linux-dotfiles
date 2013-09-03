@@ -26,10 +26,24 @@ zle -N self-insert url-quote-magic
 # }}}
 
 # {{{ Keybindings
-bindkey '^[[1;5D' vi-backward-blank-word
-bindkey '^[[1;5C' vi-forward-blank-word
-bindkey '^i' expand-or-complete-prefix
-bindkey '^W' backward-kill-word
+bindkey "$terminfo[kich1]"  overwrite-mode
+
+bindkey "$terminfo[khome]"  vi-beginning-of-line
+bindkey "$terminfo[kend]"   vi-end-of-line
+
+bindkey "$terminfo[kpp]"    beginning-of-buffer-or-history
+bindkey "$terminfo[knp]"    end-of-buffer-or-history
+
+bindkey "$terminfo[kcub1]"  backward-char
+bindkey "$terminfo[kcuf1]"   forward-char
+
+bindkey "$terminfo[kLFT]"   vi-backward-word
+bindkey "$terminfo[kRIT]"   vi-forward-word
+
+bindkey "\eOc" forward-word
+bindkey "\eOd" backward-word
+bindkey "\eOa" vi-forward-word
+bindkey "\eOb" vi-backward-word
 # }}}
 
 # {{{ Load snippets
