@@ -49,11 +49,19 @@ servers = (
     port = "9999";
     use_ssl = "yes";
   }
+  {
+    address = "dev.bmw-carit.de";
+    chatnet = "bmw-carit";
+    autoconnect = "yes";
+    port = "6697";
+    use_ssl = "yes";
+  }  
 );
 
 channels = (
   { name = "#archlinux"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#awesome"; chatnet = "oftc"; autojoin = "yes"; }
+  { name = "#bdm.telman"; chatnet = "bmw-carit"; autojoin = "yes"; }
 );
 
 chatnets = { freenode = { type = "IRC"; }; oftc = { type = "IRC"; }; };
