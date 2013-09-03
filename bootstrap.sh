@@ -6,6 +6,7 @@ function ensure_link {
     test -L "$HOME/$2" || ln -s "$DIR/$1" "$HOME/$2"
 }
 
+ensure_link "bin"           "bin"
 ensure_link "vim"           ".vim"
 ensure_link "vim/vimrc"     ".vimrc"
 ensure_link "awesome"       ".config/awesome"
