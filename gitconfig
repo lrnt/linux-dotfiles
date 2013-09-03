@@ -1,0 +1,7 @@
+[user]
+    name = Laurent De Marez
+    email = laurent@demarez.org
+
+[alias]
+    co = checkout
+    l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'

@@ -12,6 +12,7 @@ ensure_link "awesome"       ".config/awesome"
 ensure_link "zsh/zshrc"     ".zshrc"
 ensure_link "irssi"         ".irssi"
 ensure_link "xbindkeysrc"   ".xbindkeysrc"
+ensure_link "gitconfig"     ".gitconfig"
 
 mkdir -p "$DIR/vim/tmp/undo"
 mkdir -p "$DIR/vim/tmp/backup"
