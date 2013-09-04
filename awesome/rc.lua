@@ -96,24 +96,19 @@ upicon = wibox.widget.imagebox(awful.util.getdir("config") .. "/icons/up.png")
 
 netwidget = wibox.widget.textbox()
 vicious.register(netwidget, vicious.widgets.net,
-function (widget, args)
-    local down, up
+    function (widget, args)
+        local down, up
 
-    if args["{eth0 down_kb}"] ~= "0.0" or args["{eth0 up_kb}"] ~= "0.0" then
-        down, up = args["{eth0 down_kb}"], args["{eth0 up_kb}"]
-    elseif args["{wlan0 down_kb}"] ~= "0.0" or args["{wlan0 up_kb}"] ~= "0.0" then
-        down, up = args["{wlan0 down_kb}"], args["{wlan0 up_kb}"]
-    else
-        upicon.visible = false
-        dnicon.visible = false
-        return
-    end
+        if args["{eth0 down_kb}"] ~= "0.0" or args["{eth0 up_kb}"] ~= "0.0" then
+            down, up = args["{eth0 down_kb}"], args["{eth0 up_kb}"]
+        else
+            down, up = args["{wlan0 down_kb}"], args["{wlan0 up_kb}"]
+        end
 
-    upicon.visible = true
-    dnicon.visible = true
+        return string.format('<span color="#CC9393">%s</span> ' ..
+                             '<span color="#7F9F7F">%s</span>', down, up)
 
-    return string.format('<span color="#CC9393">%s</span> <span color="#7F9F7F">%s</span>', down, up)
-end, 3)
+    end, 3)
 --}}}
 
 -- {{{ Battery
