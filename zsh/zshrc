@@ -26,6 +26,7 @@ zle -N self-insert url-quote-magic
 # }}}
 
 # {{{ Keybindings
+bindkey "$terminfo[kdch1]"  delete-char
 bindkey "$terminfo[kich1]"  overwrite-mode
 
 bindkey "$terminfo[khome]"  vi-beginning-of-line
@@ -35,7 +36,7 @@ bindkey "$terminfo[kpp]"    beginning-of-buffer-or-history
 bindkey "$terminfo[knp]"    end-of-buffer-or-history
 
 bindkey "$terminfo[kcub1]"  backward-char
-bindkey "$terminfo[kcuf1]"   forward-char
+bindkey "$terminfo[kcuf1]"  forward-char
 
 bindkey "$terminfo[kLFT]"   vi-backward-word
 bindkey "$terminfo[kRIT]"   vi-forward-word
