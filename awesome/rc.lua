@@ -95,9 +95,25 @@ dnicon = wibox.widget.imagebox(awful.util.getdir("config") .. "/icons/down.png")
 upicon = wibox.widget.imagebox(awful.util.getdir("config") .. "/icons/up.png")
 
 netwidget = wibox.widget.textbox()
-vicious.register(netwidget, vicious.widgets.net, 
-    '<span color="#CC9393">${wlan0 down_kb}</span> '
-    .. '<span color="#7F9F7F">${wlan0 up_kb}</span>', 3)
+vicious.register(netwidget, vicious.widgets.net,
+function (widget, args)
+    local down, up
+
+    if args["{eth0 down_kb}"] ~= "0.0" or args["{eth0 up_kb}"] ~= "0.0" then
+        down, up = args["{eth0 down_kb}"], args["{eth0 up_kb}"]
+    elseif args["{wlan0 down_kb}"] ~= "0.0" or args["{wlan0 up_kb}"] ~= "0.0" then
+        down, up = args["{wlan0 down_kb}"], args["{wlan0 up_kb}"]
+    else
+        upicon.visible = false
+        dnicon.visible = false
+        return
+    end
+
+    upicon.visible = true
+    dnicon.visible = true
+
+    return string.format('<span color="#CC9393">%s</span> <span color="#7F9F7F">%s</span>', down, up)
+end, 3)
 --}}}
 
 -- {{{ Battery
@@ -205,7 +221,7 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
-        right_layout:add(wifiicon)
+    right_layout:add(wifiicon)
     right_layout:add(wifiwidget)
     right_layout:add(dnicon)
     right_layout:add(netwidget)
