@@ -97,12 +97,17 @@ upicon = wibox.widget.imagebox(awful.util.getdir("config") .. "/icons/up.png")
 netwidget = wibox.widget.textbox()
 vicious.register(netwidget, vicious.widgets.net,
     function (widget, args)
+        local adapters = {"eth0", "eno1", "wlan0"}
         local down, up
 
-        if args["{eth0 down_kb}"] ~= "0.0" or args["{eth0 up_kb}"] ~= "0.0" then
-            down, up = args["{eth0 down_kb}"], args["{eth0 up_kb}"]
-        else
-            down, up = args["{wlan0 down_kb}"], args["{wlan0 up_kb}"]
+        for k, adapter in pairs(adapters) do
+            down = args[string.format("{%s down_kb}", adapter)]
+            up = args[string.format("{%s up_kb}", adapter)]
+
+            if (down and down ~= "0.0") or (up and up ~= "0.0") then
+                print(adapter)
+                break
+            end
         end
 
         return string.format('<span color="#CC9393">%s</span> ' ..
