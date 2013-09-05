@@ -105,7 +105,6 @@ vicious.register(netwidget, vicious.widgets.net,
             up = args[string.format("{%s up_kb}", adapter)]
 
             if (down and down ~= "0.0") or (up and up ~= "0.0") then
-                print(adapter)
                 break
             end
         end
