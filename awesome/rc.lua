@@ -86,6 +86,10 @@ wifiicon = wibox.widget.imagebox(awful.util.getdir("config") .. "/icons/wifi.png
 wifiwidget = wibox.widget.textbox()
 vicious.register(wifiwidget, vicious.widgets.wifi,
     function(widget, args)
+        -- TODO: combine netwidget and wifiwidget
+        -- if not connected to a wifi network hide the wifi icon and show the
+        -- connected ethernet adapter, ie the adapter that is used to calculate
+        -- the up and download speed
         return math.floor(args['{link}']/70*100) .. '% '.. args['{ssid}']
     end, 90, "wlan0")
 -- }}}
@@ -118,7 +122,15 @@ vicious.register(netwidget, vicious.widgets.net,
 -- {{{ Battery
 baticon = wibox.widget.imagebox(awful.util.getdir("config") .. "/icons/bat.png")
 batwidget = wibox.widget.textbox()
-vicious.register(batwidget, vicious.widgets.bat, "$1$2%", 61, "BAT0")
+vicious.register(batwidget, vicious.widgets.bat,
+    function (widget, args)
+        if args[2] ~= 0 then
+            return string.format("%s%s%% (%s)", args[1], args[2], args[3])
+        else
+            -- TODO: hide baticon
+            return ""
+        end
+    end, 61, "BAT0")
 -- }}}
 
 -- {{{ Volume
