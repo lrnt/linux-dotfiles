@@ -6,6 +6,7 @@ urxvt*secondaryScroll:    true
 urxvt*saveLines:         65535
 urxvt*cursorBlink:        true
 urxvt*urgentOnBell:       true
+urxvt*bellIsUrgent:       true
 !
 ! Extensions
 urxvt*perl-lib:        /usr/lib/urxvt/perl/
