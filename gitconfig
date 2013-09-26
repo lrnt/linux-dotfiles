@@ -1,3 +1,6 @@
+[core]
+    excludesfile = ~/.gitignore
+
 [alias]
     co = checkout
     ll = log --graph --pretty=format':%C(yellow)%h%C(cyan)%d%C(reset) %s %C(white) %C(red bold)%an%C(reset), %C(green)%ar%C(reset)'

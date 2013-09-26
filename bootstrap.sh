@@ -14,6 +14,7 @@ ensure_link "zsh/zshrc"     ".zshrc"
 ensure_link "irssi"         ".irssi"
 ensure_link "xbindkeysrc"   ".xbindkeysrc"
 ensure_link "gitconfig"     ".gitconfig"
+ensure_link "gitignore"     ".gitignore"
 ensure_link "Xdefaults"     ".Xdefaults"
 ensure_link "xinitrc"         ".xinitrc"
 
