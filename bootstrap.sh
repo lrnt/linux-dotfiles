@@ -16,7 +16,7 @@ ensure_link "xbindkeysrc"   ".xbindkeysrc"
 ensure_link "gitconfig"     ".gitconfig"
 ensure_link "gitignore"     ".gitignore"
 ensure_link "Xdefaults"     ".Xdefaults"
-ensure_link "xinitrc"         ".xinitrc"
+ensure_link "xinitrc"       ".xinitrc"
 
 mkdir -p "$DIR/vim/tmp/undo"
 mkdir -p "$DIR/vim/tmp/backup"
