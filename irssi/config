@@ -19,6 +19,10 @@ settings = {
   };
 };
 
+ignores = (
+  { level = "JOINS PARTS QUITS NICKS"; }
+)
+
 statusbar = {
   default = {
     window = { disabled = "yes"; };
