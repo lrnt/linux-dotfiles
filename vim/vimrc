@@ -20,11 +20,6 @@ au FocusLost * silent! wa
 cnoremap w!! w !sudo tee % >/dev/null
 " }}}
 
-" {{{ Filetypes
-au BufRead,BufNewFile *.pde set filetype=arduino
-au BufRead,BufNewFile *.ino set filetype=arduino
-" }}}
-
 " {{{ Tabs and wrapping
 set tabstop=4
 set shiftwidth=4
