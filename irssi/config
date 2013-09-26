@@ -19,9 +19,7 @@ settings = {
   };
 };
 
-ignores = (
-  { level = "JOINS PARTS QUITS NICKS"; }
-)
+ignores = ( { level = "JOINS PARTS QUITS NICKS"; } );
 
 statusbar = {
   default = {
