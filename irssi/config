@@ -74,3 +74,7 @@ chatnets = {
   "bmw-carit" = { type = "IRC"; };
 };
 logs = { };
+keyboard = (
+  { key = "meta-up"; id = "command"; data = "nicklist scroll -10"; },
+  { key = "meta-down"; id = "command"; data = "nicklist scroll +10"; }
+);
