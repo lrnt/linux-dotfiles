@@ -16,6 +16,8 @@ settings = {
     awl_block = "15";
     awl_display_key = "$Q%K|$N%n $H$C$S";
     awl_display_nokey = "[$N]$H$C$S";
+    nicklist_width = "20";
+    nicklist_automode = "screen";
   };
 };
 
