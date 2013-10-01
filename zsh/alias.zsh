@@ -1,6 +1,6 @@
 # {{{ Alias
-alias ls="ls -aF --color=always"
-alias ll="ls -l"
+alias ls="ls -F --color=always"
+alias ll="ls -la"
 alias grep="grep --color=always"
 alias cp="cp -ia"
 alias mv="mv -i"
