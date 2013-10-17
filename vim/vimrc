@@ -18,6 +18,10 @@ au FocusLost * silent! wa
 
 " Sudo to write
 cnoremap w!! w !sudo tee % >/dev/null
+
+" Spell check language
+set spelllang=en_us
+map <F5> :setlocal spell!<CR>
 " }}}
 
 " {{{ Tabs and wrapping
