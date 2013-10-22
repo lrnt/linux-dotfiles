@@ -13,5 +13,6 @@ bindkey "^[[1;5D" backward-word
 
 bindkey "^[[3^" kill-word
 bindkey "^H" backward-kill-word
+bindkey "^[[3~" delete-char
 
 bindkey "^r" history-incremental-search-backward
