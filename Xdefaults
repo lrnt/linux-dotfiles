@@ -8,6 +8,12 @@ urxvt*cursorBlink:        true
 urxvt*urgentOnBell:       true
 urxvt*bellIsUrgent:       true
 !
+! Xterm key behaviour
+urxvt*keysym.Control-Up:    \033[1;5A
+urxvt*keysym.Control-Down:  \033[1;5B
+urxvt*keysym.Control-Left:  \033[1;5D
+urxvt*keysym.Control-Right: \033[1;5C
+!
 ! Extensions
 urxvt*perl-lib:        /usr/lib/urxvt/perl/
 urxvt*perl-ext-common: default,matcher,searchable-scrollback
