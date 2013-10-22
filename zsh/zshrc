@@ -23,28 +23,16 @@ setopt prompt_subst
 # Smart urls
 autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
-# }}}
 
-# {{{ Keybindings
-bindkey "$terminfo[kdch1]"  delete-char
-bindkey "$terminfo[kich1]"  overwrite-mode
-
-bindkey "$terminfo[khome]"  vi-beginning-of-line
-bindkey "$terminfo[kend]"   vi-end-of-line
-
-bindkey "$terminfo[kpp]"    beginning-of-buffer-or-history
-bindkey "$terminfo[knp]"    end-of-buffer-or-history
-
-bindkey "$terminfo[kcub1]"  backward-char
-bindkey "$terminfo[kcuf1]"  forward-char
-
-bindkey "$terminfo[kLFT]"   vi-backward-word
-bindkey "$terminfo[kRIT]"   vi-forward-word
-
-bindkey "\eOc" forward-word
-bindkey "\eOd" backward-word
-bindkey "\eOa" vi-forward-word
-bindkey "\eOb" vi-backward-word
+# History
+setopt append_history
+setopt extended_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups # ignore duplication command history list
+setopt hist_ignore_space
+setopt hist_verify
+setopt inc_append_history
+setopt share_history # share command history data
 # }}}
 
 # {{{ Load snippets
