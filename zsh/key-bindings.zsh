@@ -11,4 +11,7 @@ bindkey "^[OF" end-of-line
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
+bindkey "^[[3^" kill-word
+bindkey "^H" backward-kill-word
+
 bindkey '^r' history-incremental-search-backward
