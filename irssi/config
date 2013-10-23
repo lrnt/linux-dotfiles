@@ -66,9 +66,9 @@ channels = (
   { name = "#archlinux"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#awesome"; chatnet = "oftc"; autojoin = "yes"; },
   { name = "#bdm.telman"; chatnet = "bmw-carit"; autojoin = "yes"; },
-  { name = "#ulm-ginivi"; chatnet = "bmw-carit"; autojoin = "yes"; },
   { name = "#c++"; chatnet = "bmw-carit"; autojoin = "yes"; },
-  { name = "#biergarten"; chatnet = "bmw-carit"; autojoin = "yes"; }
+  { name = "#biergarten"; chatnet = "bmw-carit"; autojoin = "yes"; },
+  { name = "#ulm-genivi"; chatnet = "bmw-carit"; autojoin = "yes"; }
 );
 
 chatnets = {
