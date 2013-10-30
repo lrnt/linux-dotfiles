@@ -36,7 +36,10 @@ statusbar = {
   };
 };
 
-hilights = ( { text = "lrnt"; nick = "yes"; word = "yes"; } );
+hilights = (
+  { text = "lrnt"; nick = "yes"; word = "yes"; },
+  { text = "Laurent"; nick = "yes"; word = "yes"; }
+);
 
 servers = (
   {
