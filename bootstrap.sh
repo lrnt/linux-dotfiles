@@ -17,6 +17,7 @@ ensure_link "gitconfig"     ".gitconfig"
 ensure_link "gitignore"     ".gitignore"
 ensure_link "Xdefaults"     ".Xdefaults"
 ensure_link "xinitrc"       ".xinitrc"
+ensure_link "i3"            ".i3"
 
 mkdir -p "$DIR/vim/tmp/undo"
 mkdir -p "$DIR/vim/tmp/backup"
