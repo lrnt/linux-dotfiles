@@ -37,4 +37,37 @@ function extract () {
 function mkpw() {
     head /dev/urandom | uuencode -m - | sed -n 2p | cut -c1-${1:-8};
 }
+
+# original author: antonopa
+function to() {
+    local wdirs=~/.workdirs
+
+    # no args. do nothing and quit silently
+    [[ $# -lt 1 ]] && return 1
+
+    dst=$1
+
+    if [[ $dst == "register" ]] ;
+    then
+        name=$2
+        if [ -z $2 ] ; then
+            name=$(basename $(pwd))
+        fi
+
+        egrep -q "^${name}" ~/.workdirs && echo "Alias exists" && return
+        echo "Registering $(pwd) with alias $name"
+        echo "$name $(pwd)" >> ~/.workdirs
+        return
+    fi
+
+    # is there a conf file?
+    [[ ! -f $wdirs ]] && return 2
+
+    dir=$(awk -v wdir=$dst '$1==wdir{print $2}' ~/.workdirs)
+
+    # is the destination in the conf file?
+    [[ -z "$dir" ]] && return 4
+
+    pushd $dir
+}
 # }}}
