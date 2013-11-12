@@ -26,6 +26,7 @@ ignores = ( { level = "JOINS PARTS QUITS NICKS"; } );
 statusbar = {
   default = {
     window = { disabled = "yes"; };
+    aspeller = { items = { aspeller = { }; }; };
     awl_0 = {
       items = {
         barstart = { priority = "100"; };
