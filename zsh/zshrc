@@ -10,6 +10,7 @@ export XTERM="urxvt"
 export PATH=$PATH:$HOME/bin:/opt/android-sdk/tools
 export DOTFILES="$HOME/dotfiles"
 export WORKDIRS="$HOME/.workdirs"
+export CBUILDCONF="$HOME/.cbuild"
 # }}}
 
 # {{{ Options

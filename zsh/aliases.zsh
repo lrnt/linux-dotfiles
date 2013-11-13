@@ -74,6 +74,59 @@ function to() {
 function _to() {
     reply=($(awk '{print $1}' $WORKDIRS))
 }
+
+# original author: antonopa
+function cbuild() {
+    dir=build
+    clean=0
+    cmake_args=""
+    target=""
+
+    [[ -f $CBUILDCONF ]] && source $CBUILDCONF && echo "Using defaults: $defargs"
+
+    local OPTIND
+    while getopts D:d:t:chi OPTION
+    do
+        case $OPTION  in
+            d)
+                dir=$OPTARG
+                ;;
+            t)
+                target=$OPTARG
+                ;;
+            D)
+                cmake_args="$cmake_args -D$OPTARG"
+                ;;
+            i)
+                #ignore default args
+                [ ! -z defargs ] && unset defargs
+                ;;
+            c)
+                clean=1
+                ;;
+            h)
+                echo "cbuild -d <build_dir> -t <make_target>"
+                echo "defaults will be used if either or all of the arguments"
+                echo "aren't specified (build_dir:build make_target:\"\")"
+                return
+                ;;
+        esac
+    done
+    shift $(($OPTIND-1))
+
+    [[ ! -f CMakeLists.txt ]] && echo "Not a cmake project" && return 1
+
+    [[ ! -d ./$dir ]] && mkdir $dir
+
+    [[ -d ./$dir ]] && [[ $clean -eq 1 ]] && msg "Cleaning old ${dir}" && rm -rf ${dir}/*
+
+    [[ ! -z $defargs ]] && cmake_args="$cmake_args $defargs"
+
+    pushd $dir
+    echo "cmake $cmake_args .. make $target"
+    cmake $cmake_args .. && make $target
+    popd
+}
 # }}}
 
 # {{{ Autocomplete
