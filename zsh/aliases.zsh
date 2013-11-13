@@ -54,20 +54,28 @@ function to() {
             name=$(basename $(pwd))
         fi
 
-        egrep -q "^${name}" ~/.workdirs && echo "Alias exists" && return
+        egrep -q "^${name}" $WORKDIRS && echo "Alias exists" && return
         echo "Registering $(pwd) with alias $name"
-        echo "$name $(pwd)" >> ~/.workdirs
+        echo "$name $(pwd)" >> $WORKDIRS
         return
     fi
 
     # is there a conf file?
-    [[ ! -f $wdirs ]] && return 2
+    [[ ! -f $WORKDIRS ]] && return 2
 
-    dir=$(awk -v wdir=$dst '$1==wdir{print $2}' ~/.workdirs)
+    dir=$(awk -v wdir=$dst '$1==wdir{print $2}' $WORKDIRS)
 
     # is the destination in the conf file?
     [[ -z "$dir" ]] && return 4
 
     pushd $dir
 }
+
+function _to() {
+    reply=($(awk '{print $1}' $WORKDIRS))
+}
+# }}}
+
+# {{{ Autocomplete
+compctl -K _to to
 # }}}
