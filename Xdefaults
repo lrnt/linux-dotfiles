@@ -1,58 +1,58 @@
 ! General
-urxvt*termName:           rxvt-unicode-256color
-urxvt*loginShell:         true
-urxvt*scrollBar:         false
-urxvt*secondaryScroll:    true
-urxvt*saveLines:         65535
-urxvt*cursorBlink:        true
-urxvt*urgentOnBell:       true
-urxvt*bellIsUrgent:       true
+URxvt.termName:           rxvt-unicode-256color
+URxvt.loginShell:         true
+URxvt.scrollBar:         false
+URxvt.secondaryScroll:    true
+URxvt.saveLines:         65535
+URxvt.cursorBlink:        true
+URxvt.urgentOnBell:       true
+URxvt.bellIsUrgent:       true
 !
 ! Xterm key behaviour
-urxvt*keysym.Control-Up:    \033[1;5A
-urxvt*keysym.Control-Down:  \033[1;5B
-urxvt*keysym.Control-Left:  \033[1;5D
-urxvt*keysym.Control-Right: \033[1;5C
+URxvt.keysym.Control-Up:    \033[1;5A
+URxvt.keysym.Control-Down:  \033[1;5B
+URxvt.keysym.Control-Left:  \033[1;5D
+URxvt.keysym.Control-Right: \033[1;5C
 !
 ! Extensions
-urxvt*perl-lib:        /usr/lib/urxvt/perl/
-urxvt*perl-ext-common: default,matcher,searchable-scrollback
-urxvt*url-launcher:    /usr/bin/firefox
-urxvt*matcher.button:  1
+URxvt.perl-lib:        /usr/lib/urxvt/perl/
+URxvt.perl-ext-common: default,matcher,searchable-scrollback
+URxvt.url-launcher:    /usr/bin/firefox
+URxvt.matcher.button:  1
 ! Catch ugly URLs
-urxvt*cutchars:        '"'()*<>[]{|}
+URxvt.cutchars:        '"'()*<>[]{|}
 !
 ! Appearance
-URxvt*font:        xft:Terminus:10
+URxvt.font:        xft:Terminus:10
 ! Cursor
-urxvt*cursorColor: #DCDCCC
+URxvt.cursorColor: #DCDCCC
 ! URLs
-urxvt*.colorUL:    #ffffff
+URxvt.colorUL:    #ffffff
 ! 
 ! Zenburn color-scheme
-urxvt*background:  #3f3f3f
-urxvt*foreground:  #dcdccc
+URxvt.background:  #3f3f3f
+URxvt.foreground:  #dcdccc
 ! black + red
-urxvt*color0:      #1E2320
-urxvt*color1:      #705050
+URxvt.color0:      #1E2320
+URxvt.color1:      #705050
 ! green + yellow
-urxvt*color2:      #60b48a
-urxvt*color3:      #dfaf8f
+URxvt.color2:      #60b48a
+URxvt.color3:      #dfaf8f
 ! blue + purple
-urxvt*color4:      #506070
-urxvt*color5:      #dc8cc3
+URxvt.color4:      #506070
+URxvt.color5:      #dc8cc3
 ! cyan + white
-urxvt*color6:      #8cd0d3
-urxvt*color7:      #dcdccc
+URxvt.color6:      #8cd0d3
+URxvt.color7:      #dcdccc
 ! bright-black + bright-red
-urxvt*color8:      #709080
-urxvt*color9:      #dca3a3
+URxvt.color8:      #709080
+URxvt.color9:      #dca3a3
 ! bright-green + bright-yellow
-urxvt*color10:     #c3bf9f
-urxvt*color11:     #f0dfaf
+URxvt.color10:     #c3bf9f
+URxvt.color11:     #f0dfaf
 ! bright-blue + bright-purple
-urxvt*color12:     #94bff3
-urxvt*color13:     #ec93d3
+URxvt.color12:     #94bff3
+URxvt.color13:     #ec93d3
 ! bright-cyan + bright-white
-urxvt*color14:     #93e0e3
-urxvt*color15:     #ffffff
+URxvt.color14:     #93e0e3
+URxvt.color15:     #ffffff
