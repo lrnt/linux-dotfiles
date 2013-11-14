@@ -125,7 +125,10 @@ function cbuild() {
     pushd $dir
     echo "cmake $cmake_args .. make $target"
     cmake $cmake_args .. && make $target
+    exitcode=$?
     popd
+
+    return $exitcode
 }
 # }}}
 
