@@ -3,6 +3,8 @@ PROMPT="
 %{$fg[red]%}%B%n%b %{$reset_color%}on \
 %{$fg[yellow]%}%B%m%b %{$reset_color%}in %{$fg[green]%}%B%~%b
 %{$reset_color%}%% "
+
+export PROMPT_EOL_MARK=""
 # }}}
 
 # {{{ Git Prompt
