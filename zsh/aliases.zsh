@@ -1,4 +1,4 @@
-# {{{ Alias
+# {{{ Aliases
 alias ls="ls -F --color=always"
 alias ll="ls -la"
 alias grep="grep --color=always"
@@ -7,6 +7,7 @@ alias mv="mv -i"
 alias rm="rm -i"
 alias ping="ping -c 3"
 alias reload="source ~/.zshrc"
+alias sacman="sudo pacman"
 # }}}
 
 # {{{ Functions
@@ -36,6 +37,22 @@ function extract () {
 
 function mkpw() {
     head /dev/urandom | uuencode -m - | sed -n 2p | cut -c1-${1:-8};
+}
+
+function mnt() {
+    [[ $# -lt 1 ]] && return 1
+    [[ ! -d /mnt/$1 ]] && sudo mkdir /mnt/$1
+
+    sudo mount -o uid=1000 /dev/$1 /mnt/$1
+
+    # only if the mount was succesful
+    [[ $? -eq 0 ]] && pushd /mnt/$1
+}
+
+function umnt() {
+    [[ $# -lt 1 ]] && return 1
+
+    sudo umount /mnt/$1
 }
 
 # original author: antonopa
@@ -69,10 +86,6 @@ function to() {
     [[ -z "$dir" ]] && return 4
 
     pushd $dir
-}
-
-function _to() {
-    reply=($(awk '{print $1}' $WORKDIRS))
 }
 
 # original author: antonopa
@@ -133,5 +146,21 @@ function cbuild() {
 # }}}
 
 # {{{ Autocomplete
+function _mnt() {
+    reply=($(lsblk -ln -o NAME,RM | awk '$2==1 {print $1}'))
+}
+
+compctl -K _mnt mnt
+
+function _umnt() {
+    reply=($(ls -l /mnt | awk ' /^d/ {print $9}'))
+}
+
+compctl -K _umnt umnt
+
+function _to() {
+    reply=($(awk '{print $1}' $WORKDIRS))
+}
+
 compctl -K _to to
 # }}}
