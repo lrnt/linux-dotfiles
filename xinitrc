@@ -3,9 +3,6 @@
 # xbindkeys
 /usr/bin/xbindkeys
 
-# udiskey
-/usr/bin/udiskie & > /dev/null
-
 # redshift
 /usr/bin/redshift -l 48.40:9.983 &
 
