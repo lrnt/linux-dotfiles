@@ -131,7 +131,7 @@ function cbuild() {
 
     [[ ! -d ./$dir ]] && mkdir $dir
 
-    [[ -d ./$dir ]] && [[ $clean -eq 1 ]] && msg "Cleaning old ${dir}" && rm -rf ${dir}/*
+    [[ -d ./$dir ]] && [[ $clean -eq 1 ]] && echo "Cleaning old ${dir}" && rm -rf ${dir}/*
 
     [[ ! -z $defargs ]] && cmake_args="$cmake_args $defargs"
 
