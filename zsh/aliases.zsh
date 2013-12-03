@@ -147,7 +147,7 @@ function cbuild() {
 
 # {{{ Autocomplete
 function _mnt() {
-    reply=($(lsblk -ln -o NAME,RM | awk '$2==1 {print $1}'))
+    reply=($(lsblk -ln -o NAME,MOUNTPOINT | awk '!$2 {print $1}'))
 }
 
 compctl -K _mnt mnt
