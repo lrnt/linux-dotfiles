@@ -2,8 +2,8 @@ settings = {
   core = { real_name = "lrnt"; user_name = "lrnt"; nick = "lrnt"; };
   "fe-text" = { actlist_sort = "refnum"; };
   "fe-common/core" = {
-    completion_char = ",";
-    completion_nicks_lowercase = "yes";
+    completion_char = ":";
+    completion_nicks_lowercase = "no";
     autocreate_query_level = "MSGS DCCMSGS";
     autofocus_new_items = "yes";
     autolog = "yes";
