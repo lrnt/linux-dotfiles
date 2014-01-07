@@ -51,13 +51,6 @@ servers = (
     use_ssl = "yes";
   },
   {
-    address = "dev.bmw-carit.de";
-    chatnet = "bmw-carit";
-    autoconnect = "yes";
-    port = "6697";
-    use_ssl = "yes";
-  },
-  {
     address = "irc.twice-irc.de";
     chatnet = "twice-irc";
     autoconnect = "yes";
@@ -68,18 +61,10 @@ servers = (
 
 channels = (
   { name = "#archlinux"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#bdm.telman"; chatnet = "bmw-carit"; autojoin = "yes"; },
-  { name = "#c++"; chatnet = "bmw-carit"; autojoin = "yes"; },
-  { name = "#biergarten"; chatnet = "bmw-carit"; autojoin = "yes"; },
-  { name = "#ulm-genivi"; chatnet = "bmw-carit"; autojoin = "yes"; },
   { name = "#i3"; chatnet = "twice-irc"; autojoin = "yes"; }
 );
 
-chatnets = {
-  freenode = { type = "IRC"; };
-  "bmw-carit" = { type = "IRC"; };
-  "twice-irc" = { type = "IRC"; };
-};
+chatnets = { freenode = { type = "IRC"; }; "twice-irc" = { type = "IRC"; }; };
 logs = { };
 keyboard = (
   { key = "meta-up"; id = "command"; data = "nicklist scroll -10"; },
