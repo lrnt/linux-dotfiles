@@ -43,7 +43,7 @@ function mnt() {
     [[ $# -lt 1 ]] && return 1
     [[ ! -d /mnt/$1 ]] && sudo mkdir /mnt/$1
 
-    sudo mount -o uid=1000 /dev/$1 /mnt/$1
+    sudo mount /dev/$1 /mnt/$1
 
     # only if the mount was succesful
     [[ $? -eq 0 ]] && pushd /mnt/$1
@@ -52,7 +52,11 @@ function mnt() {
 function umnt() {
     [[ $# -lt 1 ]] && return 1
 
-    sudo umount /mnt/$1
+    local mdir=/mnt/$1
+
+    [[ $(pwd) == $mdir ]] && [[ $(dirs | wc -w) -gt 1 ]] && popd
+
+    sudo umount $mdir
 }
 
 # original author: antonopa
