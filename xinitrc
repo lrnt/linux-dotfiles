@@ -6,6 +6,9 @@
 # redshift
 /usr/bin/redshift -l 48.40:9.983 &
 
+# background
+feh --bg-center ~/dotfiles/background.jpg
+
 # .xinitrc.local
 [[ -f ~/.xinitrc.local ]] && . ~/.xinitrc.local
 
