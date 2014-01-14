@@ -119,7 +119,6 @@ bindsym $mod+r mode "resize"
 bar {
     status_command      py3status -c ~/.i3/i3status.conf
     workspace_buttons   yes
-    tray_output         primary
 
     colors {
         background #002b36
