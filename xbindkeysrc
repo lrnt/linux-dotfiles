@@ -15,11 +15,8 @@
     XF86WebCam
 
 # Lock
-"slimlock"
+"i3lock -c 000000"
     XF86ScreenSaver
-
-"slimlock"
-    Control+Mod2 + F3
 
 # Play/Pause
 "mpc toggle"
