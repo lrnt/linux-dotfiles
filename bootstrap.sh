@@ -9,7 +9,6 @@ function ensure_link {
 ensure_link "bin"           "bin"
 ensure_link "vim"           ".vim"
 ensure_link "vim/vimrc"     ".vimrc"
-ensure_link "awesome"       ".config/awesome"
 ensure_link "zsh/zshrc"     ".zshrc"
 ensure_link "irssi"         ".irssi"
 ensure_link "xbindkeysrc"   ".xbindkeysrc"
