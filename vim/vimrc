@@ -10,6 +10,7 @@ set listchars=tab:▸\ ,eol:¬
 set relativenumber
 set ruler
 set cursorline
+set mouse=a
 
 filetype plugin on
 
