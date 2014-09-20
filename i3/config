@@ -6,7 +6,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font pango:Droid Sans 8
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -59,9 +59,9 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # workspaces
-set $ws1 1:www
-set $ws2 2:mail
-set $ws3 3:term
+set $ws1 1
+set $ws2 2
+set $ws3 3
 set $ws4 4
 set $ws5 5
 set $ws6 6
@@ -119,6 +119,7 @@ bindsym $mod+r mode "resize"
 bar {
     status_command      py3status -c ~/.i3/i3status.conf
     workspace_buttons   yes
+    position            top
 
     colors {
         background #002b36
@@ -129,6 +130,7 @@ bar {
         inactive_workspace #888888 #222222
         urgent_workspace   #ffffff #900000
     }
+
 }
 
 # function keybinds
