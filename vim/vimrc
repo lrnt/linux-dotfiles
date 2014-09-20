@@ -40,7 +40,8 @@ set colorcolumn=+1
 
 " {{{ Looks
 syntax on
-colorscheme zenburn
+set background=dark
+colorscheme solarized
 set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)
 set foldmethod=marker
 
