@@ -17,7 +17,11 @@ ensure_link "gitignore"     ".gitignore"
 ensure_link "Xdefaults"     ".Xdefaults"
 ensure_link "xinitrc"       ".xinitrc"
 ensure_link "i3"            ".i3"
+ensure_link "mutt"          ".mutt"
 
 mkdir -p "$DIR/vim/tmp/undo"
 mkdir -p "$DIR/vim/tmp/backup"
 mkdir -p "$DIR/vim/tmp/swap"
+
+mkdir -p "$DIR/mutt/cache/bodies"
+mkdir -p "$DIR/mutt/temp"

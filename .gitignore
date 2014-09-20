@@ -1,2 +1,6 @@
 vim/tmp/*
 vim/.netrwhist
+
+mutt/cache/*
+mutt/temp/*
+mutt/mailboxes
