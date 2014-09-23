@@ -1,7 +1,0 @@
-#!/bin/bash
-if [ `screen -ls | grep irssi | wc -l` -ne 0 ]
-then
-    urxvt -title irssi -name urxvt -e sh -c "screen -drU `screen -ls | grep irssi | sed -e 's/(\(Attached\|Detached\))//'`"
-else
-    urxvt -title irssi -name urxvt -e sh -c "screen -SU irssi irssi"
-fi

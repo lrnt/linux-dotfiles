@@ -4,3 +4,8 @@ vim/.netrwhist
 mutt/cache/*
 mutt/temp/*
 mutt/mailboxes
+
+weechat/logs/*
+weechat/weechat.log
+weechat/urls.log
+weechat/irc.conf
