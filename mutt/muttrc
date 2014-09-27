@@ -11,14 +11,15 @@ set signature        = ~/.mutt/sig           # my signature file
 # {{{ Basic Options
 set mbox_type=Maildir           # mailbox type
 set beep_new                    # bell on new mails
-source ~/.mutt/colors           # load the solarized theme
+source ~/.mutt/colors.muttrc    # load the solarized theme
 # }}}
 
 # {{{ Account Settings
 source ~/.mutt/mailboxes
-set spoolfile   = "+laurent/INBOX"
-set postponed   = "+laurent/drafts"
-set record      = "+laurent/sent"
+source ~/.mutt/vub.muttrc
+source ~/.mutt/laurent.muttrc
+folder-hook =vub source ~/.mutt/vub.muttrc
+folder-hook =laurent source ~/.mutt/laurent.muttrc
 # }}}
 
 # {{{ Status Bar
@@ -81,7 +82,6 @@ bind attach <return> view-mailcap
 # }}}
 
 # {{{ Sending Emails
-set from = "laurent@demarez.org"
 set sendmail = "/usr/bin/msmtp -a default"
 set sendmail_wait = 0
 # }}}
