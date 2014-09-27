@@ -4,7 +4,7 @@
 execute pathogen#infect()
 
 set nocompatible
-set modelines=0
+set modelines=5
 set list
 set listchars=tab:▸\ ,eol:¬
 set relativenumber
