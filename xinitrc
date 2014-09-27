@@ -12,5 +12,8 @@ feh --bg-center ~/dotfiles/background.jpg
 # .xinitrc.local
 [[ -f ~/.xinitrc.local ]] && . ~/.xinitrc.local
 
+# .Xresources
+[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+
 # start wm
 exec i3
