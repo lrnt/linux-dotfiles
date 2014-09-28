@@ -41,12 +41,20 @@ function mkpw() {
 
 function mnt() {
     [[ $# -lt 1 ]] && return 1
-    [[ ! -d /mnt/$1 ]] && sudo mkdir /mnt/$1
 
-    sudo mount /dev/$1 /mnt/$1
+    local bdir=/dev/$1
+    local mdir=/mnt/$1
+    local options
+
+    [[ ! -d $mdir ]] && sudo mkdir $mdir
+
+    [[ $(lsblk -ln -o FSTYPE $bdir) == "vfat" ]] &&
+        options="-ouid=$(id -u),gid=$(id -g)"
+
+    sudo mount $options $bdir $mdir
 
     # only if the mount was succesful
-    [[ $? -eq 0 ]] && pushd /mnt/$1
+    [[ $? -eq 0 ]] && pushd $mdir
 }
 
 function umnt() {
@@ -154,17 +162,15 @@ function _mnt() {
     reply=($(lsblk -ln -o NAME,MOUNTPOINT | awk '!$2 {print $1}'))
 }
 
-compctl -K _mnt mnt
-
 function _umnt() {
-    reply=($(ls -l /mnt | awk ' /^d/ {print $9}'))
+    reply=($(lsblk -ln -o NAME,MOUNTPOINT | awk '$2 ~ /^\/mnt/ {print $1}'))
 }
-
-compctl -K _umnt umnt
 
 function _to() {
     reply=($(awk '{print $1}' $WORKDIRS))
 }
 
+compctl -K _mnt mnt
+compctl -K _umnt umnt
 compctl -K _to to
 # }}}
