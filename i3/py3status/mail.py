@@ -6,6 +6,7 @@ from time import time
 
 _MAILDIR = "~/mail/"
 _INTERVAL = 30
+_POSITION = 2
 
 class Py3status:
     def mail(self, jsong, i3status_config):
@@ -22,4 +23,4 @@ class Py3status:
         if sum(count) > 0:
             response['color'] = i3status_config['color_bad']
 
-        return (0, response)
+        return (_POSITION, response)
