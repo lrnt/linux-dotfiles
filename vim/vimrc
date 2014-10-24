@@ -67,6 +67,11 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 nnoremap <c-r> <c-w>r
+
+" Annoying keys
+nnoremap <F1> <nop>
+nnoremap Q <nop>
+nnoremap K <nop>
 " }}}
 
 " {{{ Backup files
