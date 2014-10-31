@@ -1,15 +1,12 @@
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
-[submodule "vim/bundle/vim-qml"]
-	path = vim/bundle/vim-qml
-	url = https://github.com/peterhoeg/vim-qml.git
-[submodule "vim/bundle/CoVim"]
-	path = vim/bundle/CoVim
-	url = git://github.com/FredKSchott/CoVim.git
 [submodule "vim/bundle/LaTeX-Box"]
 	path = vim/bundle/LaTeX-Box
 	url = git://github.com/LaTeX-Box-Team/LaTeX-Box.git
 [submodule "vim/bundle/vim-fugitive"]
 	path = vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+[submodule "vim/bundle/ctrlp-vim"]
+	path = vim/bundle/ctrlp-vim
+	url = https://github.com/kien/ctrlp.vim.git
