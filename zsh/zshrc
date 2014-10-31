@@ -12,6 +12,8 @@ export DOTFILES="$HOME/dotfiles"
 export WORKDIRS="$HOME/.workdirs"
 export CBUILDCONF="$HOME/.cbuild"
 export KEYTIMEOUT=1
+export PASSWORD_STORE_X_SELECTION="primary"
+export PASSWORD_STORE_CLIP_TIME=30
 # }}}
 
 # {{{ Options
