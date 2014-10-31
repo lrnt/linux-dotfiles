@@ -14,8 +14,7 @@ set mouse=a
 
 filetype plugin on
 
-" Save on focus lost
-au FocusLost * silent! wa
+let mapleader=","
 
 " Sudo to write
 cnoremap w!! w !sudo tee % >/dev/null
@@ -43,6 +42,7 @@ syntax on
 set background=dark
 colorscheme solarized
 set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)
+set laststatus=2
 set foldmethod=marker
 
 if has('gui_running')
@@ -58,6 +58,12 @@ if has('gui_running')
     " Beautiful vertical lines
     set fillchars=vert:│
 endif
+
+" Jump to last position when reopening a file
+if has("autocmd")
+    au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+        \| exe "normal! g'\"" | endif
+endif
 " }}}
 
 " {{{ Navigation
@@ -67,6 +73,18 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 nnoremap <c-r> <c-w>r
+
+" Easy edit and view
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+map <leader>e :edit %%
+map <leader>v :view %%
+
+" CtrlP
+nnoremap <leader>f :CtrlP .<cr>
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(pyc)$',
+  \ }
 
 " Annoying keys
 nnoremap <F1> <nop>
