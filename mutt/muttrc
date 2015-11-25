@@ -85,3 +85,9 @@ bind attach <return> view-mailcap
 set sendmail = "/usr/bin/msmtp -a default"
 set sendmail_wait = 0
 # }}}
+
+# {{{ Querying Contacts
+set query_command= "khard mutt --search '%s'"
+bind editor <Tab> complete-query
+bind editor ^T    complete
+# }}}
