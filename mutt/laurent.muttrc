@@ -4,3 +4,8 @@ set spoolfile   = "+laurent/INBOX"
 set postponed   = "+laurent/drafts"
 set record      = "+laurent/sent"
 set from        = "laurent@demarez.org"
+
+macro index S "<tag-prefix><save-message>=laurent/learn-spam<enter>" "move to learn-spam"
+macro pager S "<save-message>=laurent/learn-spam<enter>" "move to learn-spam"
+macro index H "<tag-prefix><copy-message>=laurent/learn-ham<enter>" "copy to learn-ham"
+macro pager H "<copy-message>=laurent/learn-ham<enter>" "copy to learn-ham"
