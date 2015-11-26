@@ -92,6 +92,7 @@ let g:ctrlp_custom_ignore = {
 
 " Annoying keys
 nnoremap <F1> <nop>
+inoremap <F1> <nop>
 nnoremap Q <nop>
 nnoremap K <nop>
 " }}}
