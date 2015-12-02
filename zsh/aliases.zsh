@@ -155,6 +155,10 @@ function cbuild() {
 
     return $exitcode
 }
+
+function dbash() {
+    docker exec -ti $1 /bin/bash
+}
 # }}}
 
 # {{{ Autocomplete
@@ -170,7 +174,12 @@ function _to() {
     reply=($(awk '{print $1}' $WORKDIRS))
 }
 
+function _dbash() {
+    reply=($(docker ps --format "{{.Names}}"))
+}
+
 compctl -K _mnt mnt
 compctl -K _umnt umnt
 compctl -K _to to
+compctl -K _dbash dbash
 # }}}
