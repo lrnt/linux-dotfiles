@@ -24,16 +24,16 @@ URxvt.cutchars:        '"'()*<>[]{|}
 !
 ! Font
 Xft.autohint:           0
-Xft.lcdfilter:          lcddefault
+Xft.lcdfilter:          lcdlight
 Xft.hintstyle:          hintfull
 Xft.hinting:            1
 Xft.antialias:          1
-Xft.dpi:                96
+Xft.dpi:                97
 Xft.rgba:               rgb
-URxvt.font:             xft:Inconsolata:antialiasing=true:pixelsize=12:Regular
-URxvt.boldFont:         xft:Inconsolata:antialiasing=true:pixelsize=12:Bold
-URxvt.italicFont:       xft:Inconsolata:antialiasing=true:pixelsize=12:Italic
-URxvt.boldItalicFont:   xft:Inconsolata:antialiasing=true:pixelsize=12:Bold:Italic
+URxvt.font:             xft:Inconsolata:antialiasing=true:hinting=true:pixelsize=13:Regular
+URxvt.boldFont:         xft:Inconsolata:antialiasing=true:hinting=true:pixelsize=13:Bold
+URxvt.italicFont:       xft:Inconsolata:antialiasing=true:hinting=true:pixelsize=13:Italic
+URxvt.boldItalicFont:   xft:Inconsolata:antialiasing=true:hinting=true:pixelsize=13:Bold:Italic
 URxvt.letterSpace:      -1
 URxvt.intensityStyles: false
 !
