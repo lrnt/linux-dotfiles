@@ -16,8 +16,8 @@ URxvt.keysym.Control-Right: \033[1;5C
 !
 ! Extensions
 URxvt.perl-lib:        /usr/lib/urxvt/perl/
-URxvt.perl-ext-common: default,matcher,searchable-scrollback
-URxvt.url-launcher:    /usr/bin/firefox
+URxvt.perl-ext-common: default,matcher,searchable-scrollback,url-select
+URxvt.url-launcher:    xdg-open
 URxvt.matcher.button:  1
 ! Catch ugly URLs
 URxvt.cutchars:        '"'()*<>[]{|}
