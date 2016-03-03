@@ -25,6 +25,9 @@ autoload -U down-line-or-beginning-search
 setopt prompt_subst
 setopt share_history
 
+# Prevent the "no matches found" error when using wildcards
+unsetopt nomatch
+
 # Smart urls
 autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
