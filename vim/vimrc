@@ -65,7 +65,7 @@ if has("autocmd")
         \| exe "normal! g'\"" | endif
 
     " ... except for commit messages
-    au BufReadPost COMMIT_EDITMSG
+    au BufReadPost COMMIT_EDITMSG,GITREBASE
         \ exe "normal! gg"
 endif
 " }}}
