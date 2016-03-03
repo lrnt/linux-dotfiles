@@ -76,7 +76,6 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
-nnoremap <c-r> <c-w>r
 
 " Easy edit and view
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
@@ -86,7 +85,7 @@ map <leader>v :view %%
 " CtrlP
 nnoremap <leader>f :CtrlP .<cr>
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'dir':  '\v[\/]\.(git|hg|svn|cover)$',
   \ 'file': '\v\.(pyc)$',
   \ }
 
