@@ -24,16 +24,14 @@ URxvt.cutchars:        '"'()*<>[]{|}
 !
 ! Font
 Xft.autohint:           0
-Xft.lcdfilter:          lcdlight
-Xft.hintstyle:          hintfull
+Xft.lcdfilter:          lcddefault
+Xft.hintstyle:          hintmedium
 Xft.hinting:            1
 Xft.antialias:          1
-Xft.dpi:                97
+Xft.dpi:                120
 Xft.rgba:               rgb
-URxvt.font:             xft:Inconsolata:antialiasing=true:hinting=true:pixelsize=13:Regular
-URxvt.boldFont:         xft:Inconsolata:antialiasing=true:hinting=true:pixelsize=13:Bold
-URxvt.italicFont:       xft:Inconsolata:antialiasing=true:hinting=true:pixelsize=13:Italic
-URxvt.boldItalicFont:   xft:Inconsolata:antialiasing=true:hinting=true:pixelsize=13:Bold:Italic
+URxvt.font:             xft:Source Code Pro:pixelsize=11:style=Semibold
+URxvt.boldFont:         xft:Source Code Pro:pixelsize=11:style=Bold
 URxvt.letterSpace:      -1
 URxvt.intensityStyles: false
 !
