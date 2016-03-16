@@ -85,7 +85,7 @@ map <leader>v :view %%
 " CtrlP
 nnoremap <leader>f :CtrlP .<cr>
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn|cover)$',
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(pyc)$',
   \ }
 
