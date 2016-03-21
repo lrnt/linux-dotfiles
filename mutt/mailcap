@@ -1,1 +1,3 @@
 text/html; w3m -o display_link=true -o display_link_number=true -dump -I %{charset} -cols 72 -T text/html %s; nametemplate=%s.html; copiousoutput
+image/*; feh %s;
+application/pdf; evince %s;
