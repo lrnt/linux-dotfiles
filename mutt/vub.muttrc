@@ -1,6 +1,0 @@
-# vim: ft=muttrc
-
-set spoolfile   = "+vub/INBOX"
-set postponed   = "+vub/Drafts"
-set record      = "+vub/Sent"
-set from        = "laurdema@vub.ac.be"
