@@ -2,25 +2,47 @@
 
 from os import walk, listdir
 from os.path import expanduser, join
-from time import time
+from time import time, sleep
 
-_MAILDIR = "~/mail/"
-_INTERVAL = 30
-_POSITION = 2
+MAILDIR = '~/.mail/'
+INBOX = 'inbox'
+INTERVAL = 30
+
 
 class Py3status:
     def mail(self, jsong, i3status_config):
         count = list()
+        mail_dir = expanduser(MAILDIR)
+        response = {
+            'name': 'mail',
+            'chached_until': time() + INTERVAL
+        }
 
-        for account in listdir(expanduser(_MAILDIR)):
-            path = join(expanduser(_MAILDIR), account, 'INBOX/new')
-            count.append(len(next(walk(path))[2]))
+        for account in listdir(mail_dir):
+            account_dir = join(mail_dir, account)
+            mailboxes = {
+                m: len(next(walk(join(account_dir, m, 'new')))[2])
+                for m in listdir(account_dir)
+            }
+            inbox_count = mailboxes.pop(INBOX)
+            mailbox_count = sum(mailboxes.values())
+            count.append('{}.{}'.format(inbox_count, mailbox_count))
 
-        response = {'name': 'mail',
-                    'full_text': '[%s]' % ':'.join(str(x) for x in count),
-                    'cached_until': time() + _INTERVAL}
+            if inbox_count > 0:
+                response['color'] = i3status_config['color_bad']
 
-        if sum(count) > 0:
-            response['color'] = i3status_config['color_bad']
+        response['full_text'] = '[{}]'.format(':'.join(x for x in count))
 
-        return (_POSITION, response)
+        return response
+
+
+if __name__ == "__main__":
+    x = Py3status()
+    while True:
+        config = {
+            'color_bad': '#FF0000',
+            'color_degraded': '#FFFF00',
+            'color_good': '#00FF00'
+        }
+        print(x.mail([], config))
+        sleep(1)
