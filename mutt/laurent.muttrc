@@ -1,6 +1,6 @@
 # vim: ft=muttrc
 
-set spoolfile   = "+laurent/INBOX"
+set spoolfile   = "+laurent/inbox"
 set postponed   = "+laurent/drafts"
 set record      = "+laurent/sent"
 set from        = "laurent@demarez.org"
