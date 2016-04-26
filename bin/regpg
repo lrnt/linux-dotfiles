@@ -1,0 +1,6 @@
+#!/bin/bash -e
+
+unenc_file="$1"
+
+rm -- "$unenc_file".gpg
+gpg -e -r laurent@demarez.org "$unenc_file"

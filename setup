@@ -1,0 +1,75 @@
+#!/bin/bash
+
+shopt -s dotglob extglob globstar nullglob
+
+git clean -dffx
+git submodule update --init --recursive
+
+location=$PWD
+
+decrypt_pgp=0
+if command -v gpg >/dev/null >/dev/null 2>&1 && gpg --list-secret-keys | grep 0x61F7B504622DE87F; then
+    decrypt_pgp=1
+fi
+
+for file in "$location"/**/*; do
+    bare="${file#$location/}"
+
+    case "$bare" in
+        .git|.git/*|.gitignore|.gitmodules|setup|README.md) continue ;;
+    esac
+
+    if [[ $file == *.gpg ]]; then
+        (( decrypt_pgp )) || continue
+
+        output_file=${file%.gpg}
+
+        gpg --output "$output_file" -d "$file"
+
+        case $output_file in
+            */bin/*) gpg_mode=0700 ;;
+            *) gpg_mode=0600 ;;
+        esac
+
+        [[ -x "$file" ]] && gpg_mode=0700
+
+        chmod "$gpg_mode" "$output_file"
+
+        # Use the decrypted file going forwards
+        file=$output_file
+        bare="${file#$location/}"
+    fi
+
+    if [[ -d "$file" ]] && ! [[ -L "$file" ]]; then
+        if [[ -L ~/"$bare" ]]; then
+            rm ~/"$bare"
+        fi
+        mkdir -m700 -p ~/"$bare"
+    else
+        link=$HOME/$bare
+        real_link=$(readlink -f "$link")
+        real_file=$(readlink -f "$file")
+
+        # If we already linked this file due to a directory symlink inside the
+        # dotfiles, don't try and link it again (see issue #1)
+        [[ $real_link != "$real_file" ]] && ln -sfn "$file" ~/"$bare"
+    fi
+done
+
+
+deleted=()
+if [[ -f ~/.dfsha ]]; then
+    mapfile -t deleted < <(git diff --name-status "$(<~/.dfsha)" HEAD | sed -n 's/^D[[:blank:]]//p' | sed 's/\.gpg$//')
+fi
+
+if (( "${#deleted[@]}" )); then
+    printf 'Files removed since last setup:\n'
+    printf '  ~/%q\n' "${deleted[@]}"
+    printf '\nRemove files from home directory? '
+    read -r delete_reply
+    if [[ $delete_reply == [yY] ]]; then
+        ( cd && rm -r "${deleted[@]}" )
+    fi
+fi
+
+git rev-parse HEAD > ~/.dfsha
