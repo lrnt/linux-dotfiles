@@ -104,6 +104,9 @@ set pastetoggle=<F2>
 " }}}
 
 " {{{ Backup files
+for directory in ["backup", "swap", "undo"]
+    silent! call mkdir($HOME . "/.vim/tmp/" . directory, "p")
+endfor
 set undodir=~/.vim/tmp/undo//
 set backupdir=~/.vim/tmp/backup//
 set directory=~/.vim/tmp/swap//
