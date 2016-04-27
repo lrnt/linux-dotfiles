@@ -1,0 +1,11 @@
+[Unit]
+Description=GnuPG private key agent
+IgnoreOnIsolate=true
+Before=default.target
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/gpg-agent --daemon
+
+[Install]
+WantedBy=default.target
