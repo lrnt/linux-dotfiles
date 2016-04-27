@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# mbsync
+systemctl start mbsync.service
+
 # xbindkeys
 /usr/bin/xbindkeys -f ~/.config/x/bindkeysrc
 
