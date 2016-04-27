@@ -1,0 +1,11 @@
+#!/bin/bash
+
+mbsync_job_ids=()
+
+for config in ~/.config/mbsync/*; do
+    mailbox=${config##*/}
+    timeout -k 240s --foreground 180s mbsync -c "$config" -a > "/tmp/mbsync-$mailbox" 2>&1 &
+    mbsync_job_ids+=("$!")
+done
+
+wait "${mbsync_job_ids[@]}"  # notmuch can keep running in the bg after

@@ -1,0 +1,9 @@
+[Unit]
+Description=mbsync
+After=network.target
+
+[Service]
+ExecStart=/bin/bash -c "%h/bin/run-mbsync"
+TimeoutStartSec=1min30s
+Restart=always
+RestartSec=5
