@@ -39,6 +39,12 @@ function mkpw() {
     head /dev/urandom | uuencode -m - | sed -n 2p | cut -c1-${1:-8};
 }
 
+function fixhistory() {
+    mv -f .zsh_history /tmp/zsh_history_bad
+    strings /tmp/zsh_history_bad > .zsh_history
+    fc -R .zsh_history
+}
+
 function mnt() {
     [[ $# -lt 1 ]] && return 1
 
