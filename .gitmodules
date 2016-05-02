@@ -16,3 +16,6 @@
 [submodule ".vim/bundle/livedown"]
 	path = .vim/bundle/livedown
 	url = https://github.com/shime/vim-livedown.git
+[submodule ".vim/bundle/gpg"]
+	path = .vim/bundle/gpg
+	url = https://github.com/jamessan/vim-gnupg
