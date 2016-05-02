@@ -21,3 +21,6 @@
 
 [push]
     default = simple
+
+[diff "gpg"]
+    textconv = gpg -q --no-tty --decrypt
