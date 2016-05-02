@@ -24,3 +24,7 @@
 
 [diff "gpg"]
     textconv = gpg -q --no-tty --decrypt
+
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
