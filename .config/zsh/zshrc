@@ -16,6 +16,9 @@ unsetopt nomatch
 autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
 
+# Ignore certain extensions when autocompleting for vim
+zstyle ':completion:*:*:vi(m|):*' ignored-patterns '*.pyc' 
+
 # History
 setopt append_history
 setopt extended_history
