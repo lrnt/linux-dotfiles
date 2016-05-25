@@ -45,6 +45,7 @@ colorscheme solarized
 set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)
 set laststatus=2
 set foldmethod=marker
+set scrolloff=10
 
 if has('gui_running')
     set guifont=Terminus\ 10
