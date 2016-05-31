@@ -8,6 +8,7 @@ set modelines=5
 set list
 set listchars=tab:▸\ ,eol:¬
 set relativenumber
+set number
 set ruler
 set cursorline
 set mouse=a
