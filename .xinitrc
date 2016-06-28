@@ -1,5 +1,7 @@
 #!/bin/bash
 
+systemctl --user start dunst.service
+
 # xbindkeys
 /usr/bin/xbindkeys -f ~/.config/x/bindkeysrc
 
