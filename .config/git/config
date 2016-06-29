@@ -1,3 +1,7 @@
+[user]
+    name = Laurent De Marez
+    useconfigonly = true
+
 [core]
     excludesfile = ~/.gitignore
 
@@ -15,9 +19,6 @@
     added = yellow bold
     changed = green bold
     untracked = red bold
-
-[include]
-    path = ~/.gitconfig.local
 
 [push]
     default = simple
