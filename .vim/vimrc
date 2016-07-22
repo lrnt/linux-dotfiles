@@ -110,6 +110,9 @@ nnoremap K <nop>
 
 " Toggle paste and nopaste
 set pastetoggle=<F2>
+
+" Nice autocomplete
+set wildmode=longest,list
 " }}}
 
 " {{{ Backup files
