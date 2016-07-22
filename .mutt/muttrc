@@ -13,10 +13,16 @@ set beep_new                    # bell on new mails
 source ~/.mutt/colors.muttrc    # load the solarized theme
 # }}}
 
+# {{{ Sending Emails
+set sendmail_wait = 0
+set use_from=yes
+set realname="Laurent De Marez"
+# }}}
+
 # {{{ Account Settings
 mailboxes `find ~/.mail/ -type d -name cur -printf '%h '`
-source ~/.mutt/laurent.muttrc
-folder-hook =laurent source ~/.mutt/laurent.muttrc
+source ~/.mutt/accounts/laurent@demarez.org
+folder-hook =laurent source ~/.mutt/accounts/laurent@demarez.org
 # }}}
 
 # {{{ Status Bar
@@ -76,11 +82,6 @@ bind pager R  group-reply
 
 # View attachments properly.
 bind attach <return> view-mailcap
-# }}}
-
-# {{{ Sending Emails
-set sendmail = "/usr/bin/msmtp -a default"
-set sendmail_wait = 0
 # }}}
 
 # {{{ Querying Contacts

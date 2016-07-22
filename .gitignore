@@ -6,3 +6,6 @@
 .config/weechat/irc.conf
 
 .config/mbsync/laurent
+
+.config/msmtp/laurent@demarez.org
+.mutt/accounts/laurent@demarez.org
