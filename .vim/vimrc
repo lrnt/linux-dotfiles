@@ -1,6 +1,5 @@
 " lrnt's vim configuration file
 
-" {{{ Basics
 execute pathogen#infect()
 
 set nocompatible
@@ -18,15 +17,6 @@ filetype plugin on
 
 let mapleader=","
 
-" Sudo to write
-cnoremap w!! w !sudo tee % >/dev/null
-
-" Spell check language
-set spelllang=en_us
-map <F5> :setlocal spell!<CR>
-" }}}
-
-" {{{ Tabs and wrapping
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -37,9 +27,7 @@ set wrap
 set formatoptions=n1
 set textwidth=80
 set colorcolumn=+1
-" }}}
 
-" {{{ Looks
 syntax on
 set background=dark
 colorscheme solarized
@@ -62,6 +50,13 @@ if has('gui_running')
     set fillchars=vert:│
 endif
 
+" Sudo to write
+cnoremap w!! w !sudo tee % >/dev/null
+
+" Spell check language
+set spelllang=en_us
+map <F5> :setlocal spell!<CR>
+
 if has("autocmd")
     " Jump to last position when reopening a file...
     au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
@@ -78,9 +73,7 @@ endif
 
 " Markdown
 let g:markdown_fenced_languages = ['python', 'javascript']
-" }}}
 
-" {{{ Navigation
 " Navigation between split windows
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
@@ -113,9 +106,7 @@ set pastetoggle=<F2>
 
 " Nice autocomplete
 set wildmode=longest,list
-" }}}
 
-" {{{ Backup files
 for directory in ["backup", "swap", "undo"]
     silent! call mkdir($HOME . "/.vim/tmp/" . directory, "p")
 endfor
@@ -123,4 +114,3 @@ set undodir=~/.vim/tmp/undo//
 set backupdir=~/.vim/tmp/backup//
 set directory=~/.vim/tmp/swap//
 set backup
-" }}}
