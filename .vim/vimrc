@@ -36,20 +36,6 @@ set laststatus=2
 set foldmethod=marker
 set scrolloff=10
 
-if has('gui_running')
-    set guifont=Terminus\ 10
-
-    " Less UI stuff
-    set go-=T
-    set go-=l
-    set go-=L
-    set go-=r
-    set go-=R
-
-    " Beautiful vertical lines
-    set fillchars=vert:│
-endif
-
 " Sudo to write
 cnoremap w!! w !sudo tee % >/dev/null
 
