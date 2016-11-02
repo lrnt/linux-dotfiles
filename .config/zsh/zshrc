@@ -16,8 +16,20 @@ unsetopt nomatch
 autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
 
+# Enable fuzzy matching for autocomplete
+zstyle ':completion:*' matcher-list '' \
+  'm:{a-z\-}={A-Z\_}' \
+  'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
+  'r:|?=** m:{a-z\-}={A-Z\_}'
+
+# Enable menu select in zsh autocomplete
+zstyle ':completion:*' menu select
+
+# Ignore origin branches in git checkout
+zstyle ':completion:*:*:git-checkout:*' ignored-patterns 'origin/*'
+
 # Ignore certain extensions when autocompleting for vim
-zstyle ':completion:*:*:vi(m|):*' ignored-patterns '*.pyc' 
+zstyle ':completion:*:*:vi(m|):*' ignored-patterns '*.pyc'
 
 # History
 setopt append_history
