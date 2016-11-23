@@ -31,6 +31,9 @@ zstyle ':completion:*:*:git-checkout:*' ignored-patterns 'origin/*'
 # Ignore certain extensions when autocompleting for vim
 zstyle ':completion:*:*:vi(m|):*' ignored-patterns '*.pyc'
 
+# Ignore .retry files when autocompleting ansible-playbook
+zstyle ':completion:*:*:ansible-playbook:*' ignored-patterns '*.retry'
+
 # History
 setopt append_history
 setopt extended_history
