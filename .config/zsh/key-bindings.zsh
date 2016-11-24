@@ -20,3 +20,5 @@ bindkey "^H" backward-kill-word
 bindkey "^[[3~" delete-char
 
 bindkey "^r" history-incremental-search-backward
+
+bindkey '^[[Z' reverse-menu-complete
