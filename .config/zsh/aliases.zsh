@@ -8,6 +8,8 @@ alias rm="rm -i"
 alias ping="ping -c 3"
 alias reload="source ~/.zshrc"
 alias sacman="sudo pacman"
+alias dps="docker ps --format 'table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Names}}'"
+alias dpsa="docker ps -a --format 'table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Names}}'"
 # }}}
 
 # {{{ Functions
