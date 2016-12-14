@@ -29,3 +29,10 @@
 # Previous Soung
 "mpc prev"
     XF86AudioPrev
+
+# Disable ctrl + scolling
+"/bin/true"
+  Control + b:5 + release
+
+"/bin/true"
+  Control + b:4 + release
