@@ -10,6 +10,8 @@ export CBUILDCONF="$HOME/.cbuild"
 export KEYTIMEOUT=1
 export PASSWORD_STORE_X_SELECTION="primary"
 export PASSWORD_STORE_CLIP_TIME=30
+export PIPSI_HOME='/usr/local/venvs'
+export PIPSI_BIN_DIR='/usr/local/bin'
 
 [[ -e "$XDG_RUNTIME_DIR/gnupg/S.gpg-agent.ssh" ]] && \
     export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gnupg/S.gpg-agent.ssh"
