@@ -1,6 +1,7 @@
 #!/bin/bash
 
 systemctl --user start dunst.service
+systemctl --user start xautolock.service
 
 # xbindkeys
 /usr/bin/xbindkeys -f ~/.config/x/bindkeysrc
