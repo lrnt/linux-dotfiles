@@ -4,18 +4,18 @@ from os import walk, listdir
 from os.path import expanduser, join
 from time import time, sleep
 
-MAILDIR = '~/.mail/'
-INBOX = 'inbox'
-INTERVAL = 30
-
 
 class Py3status:
+    maildir = '~/.mail/'
+    inbox = 'inbox'
+    interval = 30
+
     def mail(self, jsong, i3status_config):
         count = list()
-        mail_dir = expanduser(MAILDIR)
+        mail_dir = expanduser(self.maildir)
         response = {
             'name': 'mail',
-            'chached_until': time() + INTERVAL
+            'chached_until': time() + self.interval
         }
 
         for account in listdir(mail_dir):
@@ -24,7 +24,7 @@ class Py3status:
                 m: len(next(walk(join(account_dir, m, 'new')))[2])
                 for m in listdir(account_dir)
             }
-            inbox_count = mailboxes.pop(INBOX)
+            inbox_count = mailboxes.pop(self.inbox)
             mailbox_count = sum(mailboxes.values())
             count.append('{}.{}'.format(inbox_count, mailbox_count))
 
