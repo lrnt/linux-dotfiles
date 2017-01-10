@@ -5,7 +5,7 @@
 .config/weechat/urls.log
 .config/weechat/irc.conf
 
-.config/mbsync/laurent
+.config/mbsync/laurent@demarez.org
 
 .config/msmtp/laurent@demarez.org
 .mutt/accounts/laurent@demarez.org
