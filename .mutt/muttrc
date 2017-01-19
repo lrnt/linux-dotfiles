@@ -20,7 +20,7 @@ set realname="Laurent De Marez"
 # }}}
 
 # {{{ Account Settings
-mailboxes `find ~/.mail/ -type d -name cur -printf '%h '`
+mailboxes `find ~/.mail/ -type d -name cur -printf '"%h" '`
 source ~/.mutt/accounts/laurent@demarez.org
 folder-hook =laurent source ~/.mutt/accounts/laurent@demarez.org
 # }}}
