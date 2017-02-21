@@ -3,5 +3,4 @@ Description=Lock screen after a few minutes of inactivity
 
 [Service]
 Type=simple
-Environment=DISPLAY=:0
 ExecStart=/usr/bin/xautolock -time 15 -locker "i3lock -c 000000 -n"

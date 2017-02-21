@@ -1,5 +1,6 @@
 #!/bin/bash
 
+systemctl --user import-environment DISPLAY XAUTHORITY
 systemctl --user start dunst.service
 systemctl --user start xautolock.service
 
