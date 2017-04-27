@@ -13,7 +13,7 @@ export PASSWORD_STORE_CLIP_TIME=30
 export PIPSI_HOME='/usr/local/venvs'
 export PIPSI_BIN_DIR='/usr/local/bin'
 
-[[ -e "$XDG_RUNTIME_DIR/gnupg/S.gpg-agent.ssh" ]] && \
+[[ -z $SSH_AUTH_SOCK ]] && [[ -e "$XDG_RUNTIME_DIR/gnupg/S.gpg-agent.ssh" ]] && \
     export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gnupg/S.gpg-agent.ssh"
 
 # Set GPG TTY
