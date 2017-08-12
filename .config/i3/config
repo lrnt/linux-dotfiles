@@ -145,3 +145,4 @@ bindsym $mod+Shift+minus move scratchpad
 
 # window rules
 for_window [class="Pavucontrol"] floating enable, border normal
+for_window [class="Pinentry"] floating enable, border normal
