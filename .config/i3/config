@@ -142,3 +142,6 @@ bindsym $mod+o move workspace to output right
 # scratchpad
 bindsym $mod+minus scratchpad show
 bindsym $mod+Shift+minus move scratchpad
+
+# window rules
+for_window [class="Pavucontrol"] floating enable, border normal
