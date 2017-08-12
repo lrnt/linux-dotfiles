@@ -1,6 +1,10 @@
 #!/bin/bash
 
-systemctl --user import-environment DISPLAY XAUTHORITY
+# set PATH
+export PATH="$HOME/bin:$PATH"
+
+# start user services
+systemctl --user import-environment DISPLAY XAUTHORITY PATH
 systemctl --user start dunst.service
 systemctl --user start xautolock.service
 
