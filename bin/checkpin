@@ -1,0 +1,4 @@
+#!/bin/bash
+
+id=$(gpg-connect-agent 'scd serialno' /bye | head -1 | cut -d' '  -f3)
+gpg-connect-agent "scd checkpin $id" /bye | grep -q OK
