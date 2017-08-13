@@ -17,5 +17,8 @@ systemctl --user start xautolock.service
 # .Xresources
 [[ -f ~/.config/x/resources ]] && xrdb -merge ~/.config/x/resources
 
+# set wallpaper
+feh --bg-fill "$HOME/.wallpaper.jpg"
+
 # start wm
 exec i3
