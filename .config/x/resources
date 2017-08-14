@@ -30,8 +30,8 @@ Xft.hinting:            1
 Xft.antialias:          1
 Xft.dpi:                96
 Xft.rgba:               rgb
-URxvt.font:             xft:Source Code Pro:pixelsize=11:style=Semibold
-URxvt.boldFont:         xft:Source Code Pro:pixelsize=11:style=Bold
+URxvt.font:             xft:Source Code Pro:size=8:style=Semibold
+URxvt.boldFont:         xft:Source Code Pro:size=8:style=Bold
 URxvt.letterSpace:      -1
 URxvt.intensityStyles:  false
 !
