@@ -22,7 +22,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec rofi -show run
 
 # start passmenu
-bindsym $mod+p exec passmenu
+bindsym $mod+p exec rofi -modi "pass:~/bin/rofi-pass.sh" -show pass
 
 # change focus
 bindsym $mod+h focus left
