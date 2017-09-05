@@ -1,13 +1,13 @@
 # Increase volume
-"amixer sset Master playback 10+ unmute"
+"pamixer --increase 5"
     XF86AudioRaiseVolume
 
 # Decrease volume
-"amixer sset Master playback 10- unmute"
+"pamixer --decrease 5"
     XF86AudioLowerVolume
 
 # Toggle mute
-"amixer sset Master toggle"
+"pamixer -t"
     XF86AudioMute
 
 # Toggle touchpad
