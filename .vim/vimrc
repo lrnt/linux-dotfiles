@@ -93,6 +93,9 @@ set pastetoggle=<F2>
 " Nice autocomplete
 set wildmode=longest,list
 
+" Setup vimwiki
+let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+
 for directory in ["backup", "swap", "undo"]
     silent! call mkdir($HOME . "/.vim/tmp/" . directory, "p")
 endfor
