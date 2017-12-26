@@ -18,18 +18,6 @@
 "i3lock -c 000000"
     XF86ScreenSaver
 
-# Play/Pause
-"mpc toggle"
-    XF86AudioPlay
-
-# Next Song
-"mpc next"
-    XF86AudioNext
-
-# Previous Soung
-"mpc prev"
-    XF86AudioPrev
-
 # Disable ctrl + scolling
 "/bin/true"
   Control + b:5 + release
