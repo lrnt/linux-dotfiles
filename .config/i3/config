@@ -136,10 +136,17 @@ bindsym $mod+F2 exec pamixer --increase 5
 bindsym $mod+F3 exec i3lock -c 000000
 bindsym $mod+F5 exec systemctl suspend
 
+# backlight keybinds
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+
 # media keybinds
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioRaiseVolume pamixer --increase 5
+bindsym XF86AudioLowerVolume pamixer --decrease 5
+bindsym XF86AudioMute pamixer -t
 
 # move to other output
 bindsym $mod+o move workspace to output right

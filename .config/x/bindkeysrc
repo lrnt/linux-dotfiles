@@ -1,15 +1,3 @@
-# Increase volume
-"pamixer --increase 5"
-    XF86AudioRaiseVolume
-
-# Decrease volume
-"pamixer --decrease 5"
-    XF86AudioLowerVolume
-
-# Toggle mute
-"pamixer -t"
-    XF86AudioMute
-
 # Toggle touchpad
 "synclient TouchpadOff=$(synclient -l | grep -c 'TouchpadOff.*=.*0')"
     XF86WebCam
