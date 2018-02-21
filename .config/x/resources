@@ -1,28 +1,33 @@
 ! General
-URxvt.termName:           rxvt-unicode-256color
-URxvt.loginShell:         true
-URxvt.scrollBar:         false
-URxvt.secondaryScroll:    true
-URxvt.saveLines:         65535
-URxvt.cursorBlink:        true
-URxvt.urgentOnBell:       true
-URxvt.bellIsUrgent:       true
+URxvt.termName:         rxvt-unicode-256color
+URxvt.loginShell:       true
+URxvt.scrollBar:        false
+URxvt.secondaryScroll:  true
+URxvt.saveLines:        5000
+URxvt.cursorBlink:      true
+URxvt.urgentOnBell:     true
+URxvt.bellIsUrgent:     true
+URxvt.iso14755:         false
+URxvt.iso14755_52:      false
 !
 ! Xterm key behaviour
 URxvt.keysym.Control-Up:    \033[1;5A
 URxvt.keysym.Control-Down:  \033[1;5B
 URxvt.keysym.Control-Left:  \033[1;5D
 URxvt.keysym.Control-Right: \033[1;5C
+
 !
 ! Extensions
 URxvt.perl-lib:             /usr/lib/urxvt/perl/
-URxvt.perl-ext-common:      default,matcher,searchable-scrollback
+URxvt.perl-ext-common:      default,matcher,searchable-scrollback,clipboard
 URxvt.url-launcher:         firefox
 URxvt.matcher.button:       1
 URxvt.matcher.pattern.1:    \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
 URxvt.matcher.pattern.2:    \\B(/\\S+?):(\\d+)(?=:|$)
 URxvt.keysym.M-u:           perl:matcher:last
 URxvt.keysym.M-U:           perl:matcher:list
+URxvt.keysym.C-C:           perl:clipboard:copy
+URxvt.keysym.C-V:           perl:clipboard:paste
 ! Catch ugly URLs
 URxvt.cutchars:             '"'()*<>[]{|}
 !
