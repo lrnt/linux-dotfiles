@@ -144,9 +144,9 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
-bindsym XF86AudioRaiseVolume pamixer --increase 5
-bindsym XF86AudioLowerVolume pamixer --decrease 5
-bindsym XF86AudioMute pamixer -t
+bindsym XF86AudioRaiseVolume exec pamixer --increase 5
+bindsym XF86AudioLowerVolume exec pamixer --decrease 5
+bindsym XF86AudioMute exec pamixer -t
 
 # move to other output
 bindsym $mod+o move workspace to output right
