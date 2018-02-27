@@ -60,7 +60,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+#bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -154,6 +154,10 @@ bindsym $mod+o move workspace to output right
 # scratchpad
 bindsym $mod+minus scratchpad show
 bindsym $mod+Shift+minus move scratchpad
+
+# vim anywhere
+for_window [instance="vim-anywhere"] floating enable, resize set 640 480
+bindsym $mod+a exec "urxvt -name vim-anywhere -e sh -c ~/bin/vim-anywhere"
 
 # window rules
 for_window [class="Pavucontrol"] floating enable, border normal
