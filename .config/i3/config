@@ -162,4 +162,4 @@ bindsym $mod+a exec "urxvt -name vim-anywhere -e sh -c ~/bin/vim-anywhere"
 # window rules
 for_window [class="Pavucontrol"] floating enable, border normal
 for_window [class="Pinentry"] floating enable, border normal
-for_window [class="Slack" title="Slack Call Minipanel"] floating enable
+for_window [class="Slack" title="Slack Call Minipanel"] move scratchpad
