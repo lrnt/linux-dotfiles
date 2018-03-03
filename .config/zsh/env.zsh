@@ -8,8 +8,8 @@ export PATH=$PATH:$HOME/bin
 export WORKDIRS="$HOME/.workdirs"
 export CBUILDCONF="$HOME/.cbuild"
 export KEYTIMEOUT=1
-export PASSWORD_STORE_X_SELECTION="primary"
-export PASSWORD_STORE_CLIP_TIME=30
+export PASSWORD_STORE_X_SELECTION="clipboard"
+export PASSWORD_STORE_CLIP_TIME=15
 export PIPSI_HOME='/usr/local/venvs'
 export PIPSI_BIN_DIR='/usr/local/bin'
 
