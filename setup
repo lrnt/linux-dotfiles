@@ -8,7 +8,7 @@ git submodule update --init --recursive
 location=$PWD
 
 decrypt_pgp=0
-if command -v gpg >/dev/null >/dev/null 2>&1 && gpg --list-secret-keys | grep 0x70C4D92560275F56; then
+if command -v gpg >/dev/null >/dev/null 2>&1 && gpg --list-secret-keys | grep 0xDF184EBFCFBCDCFD; then
     decrypt_pgp=1
 fi
 
