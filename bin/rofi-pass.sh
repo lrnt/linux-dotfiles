@@ -5,7 +5,7 @@ shopt -s nullglob globstar
 # Handle argument.
 if [ ! -z "$@" ]
 then
-    coproc (pass -c "$@")
+    coproc { pass -c "$@"; notify-send "Password $@ copied to clipboard"; }
     exit;
 fi
 
@@ -15,4 +15,4 @@ password_files=( "$prefix"/**/*.gpg )
 password_files=( "${password_files[@]#"$prefix"/}" )
 password_files=( "${password_files[@]%.gpg}" )
 
-printf '%s\n' "${password_files[@]}"
+printf "%s\n" "${password_files[@]}"
