@@ -11,7 +11,7 @@ set number
 set ruler
 set cursorline
 set mouse=a
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 filetype plugin on
 
