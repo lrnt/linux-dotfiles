@@ -7,4 +7,4 @@ mkdir -p $TMPFILE_DIR
 touch $TMPFILE
 
 vim $TMPFILE
-nohup xclip -selection clipboard < $TMPFILE
+nohup xclip -selection clipboard < $TMPFILE &>/dev/null
