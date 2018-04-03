@@ -31,3 +31,6 @@
 [submodule ".vim/bundle/vimwiki"]
 	path = .vim/bundle/vimwiki
 	url = https://github.com/vimwiki/vimwiki.git
+[submodule ".vim/bundle/vim-ledger"]
+	path = .vim/bundle/vim-ledger
+	url = git@github.com:ledger/vim-ledger.git
