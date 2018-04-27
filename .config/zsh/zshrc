@@ -7,7 +7,6 @@ autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
 
 setopt prompt_subst
-setopt share_history
 
 # Prevent the "no matches found" error when using wildcards
 unsetopt nomatch
