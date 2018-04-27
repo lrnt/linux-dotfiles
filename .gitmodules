@@ -34,3 +34,6 @@
 [submodule ".vim/bundle/vim-ledger"]
 	path = .vim/bundle/vim-ledger
 	url = git@github.com:ledger/vim-ledger.git
+[submodule ".vim/bundle/vim-jsx"]
+	path = .vim/bundle/vim-jsx
+	url = git@github.com:mxw/vim-jsx.git
