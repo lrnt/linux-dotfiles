@@ -19,9 +19,6 @@
 [submodule ".vim/bundle/ack.vim"]
 	path = .vim/bundle/ack.vim
 	url = https://github.com/mileszs/ack.vim.git
-[submodule ".vim/.vim/bundle/typescript-vim"]
-	path = .vim/.vim/bundle/typescript-vim
-	url = https://github.com/leafgarland/typescript-vim.git
 [submodule ".vim/bundle/mustache"]
 	path = .vim/bundle/mustache
 	url = https://github.com/mustache/vim-mustache-handlebars.git
