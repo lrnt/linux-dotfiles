@@ -40,10 +40,10 @@ Xft.lcdfilter:          lcddefault
 Xft.hintstyle:          hintmedium
 Xft.hinting:            1
 Xft.antialias:          1
-Xft.dpi:                96
+Xft.dpi:                120
 Xft.rgba:               rgb
-URxvt.font:             xft:Source Code Pro:size=8:style=Semibold
-URxvt.boldFont:         xft:Source Code Pro:size=8:style=Bold
+URxvt.font:             xft:Source Code Pro:size=10:style=Semibold
+URxvt.boldFont:         xft:Source Code Pro:size=10:style=Bold
 URxvt.letterSpace:      -1
 URxvt.intensityStyles:  false
 !

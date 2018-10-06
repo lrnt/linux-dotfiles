@@ -20,5 +20,8 @@ systemctl --user start xautolock.service
 # set wallpaper
 feh --bg-fill "$HOME/.wallpaper.jpg"
 
+# Set DPI
+xrandr --dpi 120
+
 # start wm
 exec i3
