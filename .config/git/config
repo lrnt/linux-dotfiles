@@ -20,6 +20,9 @@
     changed = green bold
     untracked = red bold
 
+[commit]
+    gpgsign = true
+
 [push]
     default = simple
 
