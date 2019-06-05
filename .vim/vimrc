@@ -96,6 +96,25 @@ set pastetoggle=<F2>
 " Nice autocomplete
 set wildmode=longest,list
 
+" Linting and formatting
+let g:ale_linters = {
+\  'javascript': ['flow', 'eslint', 'prettier'],
+\  'graphql': ['gqlint'],
+\}
+let g:ale_fixers = {
+\  'javascript': ['eslint', 'prettier'],
+\  'graphql': ['prettier'],
+\  'typescript': ['tslint', 'prettier'],
+\}
+
+" The code can be formatted using ALEFix
+let g:ale_javascript_prettier_use_local_config = 1
+let g:ale_completion_enabled = 0
+
+" Shortcust to use ALEFix
+nmap <F9> :ALEFix<CR>
+nmap <F8> :ALEGoToDefinitionInTab<CR>
+
 " Setup vimwiki
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
 

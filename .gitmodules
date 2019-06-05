@@ -40,3 +40,6 @@
 [submodule ".vim/bundle/vim-solidity"]
 	path = .vim/bundle/vim-solidity
 	url = https://github.com/tomlion/vim-solidity.git
+[submodule ".vim/bundle/vim-prettier"]
+	path = .vim/bundle/vim-prettier
+	url = https://github.com/heavenshell/vim-prettier.git
